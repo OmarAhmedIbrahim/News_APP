@@ -4,9 +4,11 @@ import 'package:news_app/components/home_page_builders/home_page_categories_buil
 import '../../classes/home_page_classes/category_components_class.dart';
 
 class HomePageCategories extends StatelessWidget {
-  HomePageCategories({super.key});
+   HomePageCategories({super.key});
 
-  List<CategoryComponentsClass> category = [
+ final  List<CategoryComponentsClass> category = [
+    CategoryComponentsClass(
+        name: "General", image: "assets/images/general.avif"),
     CategoryComponentsClass(name: "Sports", image: "assets/images/sports.avif"),
     CategoryComponentsClass(
         name: "Entertainment", image: "assets/images/entertaiment.avif"),
@@ -17,8 +19,6 @@ class HomePageCategories extends StatelessWidget {
         name: "Business", image: "assets/images/business.avif"),
     CategoryComponentsClass(
         name: "Technology", image: "assets/images/technology.jpeg"),
-    CategoryComponentsClass(
-        name: "General", image: "assets/images/general.avif"),
   ];
 
   @override
@@ -26,7 +26,7 @@ class HomePageCategories extends StatelessWidget {
     return SizedBox(
       height: 150,
       child: ListView.builder(
-        itemCount: category.length,
+          itemCount: category.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) =>
               HomePageCategoriesBuilder(category: category[index])),

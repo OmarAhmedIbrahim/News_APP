@@ -9,6 +9,10 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title : Text(category_name),
+      ),
       body: CustomScrollView(
           slivers: [NewsHandler(category: category_name,)]),
     );
